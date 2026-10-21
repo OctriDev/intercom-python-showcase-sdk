@@ -3,7 +3,7 @@
 
 import importlib
 
-from .custom_object_instances_models_part001 import (
+from .custom_object_instances_models_shared import (
     AddressableList,
     CompanyData,
     ContactCompanies,
@@ -22,7 +22,7 @@ from .custom_object_instances_models_part001 import (
     ConversationParts,
     Datetime,
 )
-from .custom_object_instances_models_part002 import (
+from .custom_object_instances_models_shared2 import (
     ConversationPartMetadata,
     ConversationPartMetadataQuickReplyOptionsItem,
     ConversationRating,
@@ -35,7 +35,7 @@ from .custom_object_instances_models_part002 import (
     ConversationStatistics,
     SourceEmailMessageMetadata,
 )
-from .custom_object_instances_models_part003 import (
+from .custom_object_instances_models_shared3 import (
     CallSummary,
     ConversationAttributeUpdatedByAdmin,
     ConversationAttributeUpdatedByAdminAttribute,
@@ -63,7 +63,7 @@ from .custom_object_instances_models_part003 import (
     OperatorWorkflowEventEvent,
     OperatorWorkflowEventWorkflow,
 )
-from .custom_object_instances_models_part004 import (
+from .custom_object_instances_models_shared4 import (
     Error2,
     Error2ErrorsItem,
     FileAttribute,
@@ -80,7 +80,7 @@ from .custom_object_instances_models_part004 import (
     SubscriptionType,
     SubscriptionTypeList,
 )
-from .custom_object_instances_models_part005 import (
+from .custom_object_instances_models_shared5 import (
     ConversationPart,
     ConversationPartTranslations,
     CustomAttributes,
@@ -177,16 +177,16 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_custom_object_instances_models_part001 = importlib.import_module(
-    ".custom_object_instances_models_part001", __package__
+_custom_object_instances_models_shared = importlib.import_module(
+    ".custom_object_instances_models_shared", __package__
 )
 
-_deferred_custom_object_instances_models_part001: tuple[tuple[str, object], ...] = (
+_deferred_custom_object_instances_models_shared: tuple[tuple[str, object], ...] = (
     ("ConversationPart", ConversationPart),
     ("SocialProfile", SocialProfile),
 )
-for _name, _value in _deferred_custom_object_instances_models_part001:
-    setattr(_custom_object_instances_models_part001, _name, _value)
+for _name, _value in _deferred_custom_object_instances_models_shared:
+    setattr(_custom_object_instances_models_shared, _name, _value)
 
 AddressableList.model_rebuild()
 ContactCompanies.model_rebuild()
@@ -205,15 +205,15 @@ ConversationFirstContactReply.model_rebuild()
 ConversationPartAuthor.model_rebuild()
 ConversationParts.model_rebuild()
 
-_custom_object_instances_models_part002 = importlib.import_module(
-    ".custom_object_instances_models_part002", __package__
+_custom_object_instances_models_shared2 = importlib.import_module(
+    ".custom_object_instances_models_shared2", __package__
 )
 
-_deferred_custom_object_instances_models_part002: tuple[tuple[str, object], ...] = (
+_deferred_custom_object_instances_models_shared2: tuple[tuple[str, object], ...] = (
     ("PartAttachment", PartAttachment),
 )
-for _name, _value in _deferred_custom_object_instances_models_part002:
-    setattr(_custom_object_instances_models_part002, _name, _value)
+for _name, _value in _deferred_custom_object_instances_models_shared2:
+    setattr(_custom_object_instances_models_shared2, _name, _value)
 
 ConversationPartMetadataQuickReplyOptionsItem.model_rebuild()
 ConversationPartMetadata.model_rebuild()
@@ -227,17 +227,17 @@ ConversationSourceAuthor.model_rebuild()
 SourceEmailMessageMetadata.model_rebuild()
 ConversationStatistics.model_rebuild()
 
-_custom_object_instances_models_part003 = importlib.import_module(
-    ".custom_object_instances_models_part003", __package__
+_custom_object_instances_models_shared3 = importlib.import_module(
+    ".custom_object_instances_models_shared3", __package__
 )
 
-_deferred_custom_object_instances_models_part003: tuple[tuple[str, object], ...] = (
+_deferred_custom_object_instances_models_shared3: tuple[tuple[str, object], ...] = (
     ("PagesLink", PagesLink),
     ("Reference", Reference),
     ("StartingAfterPaging", StartingAfterPaging),
 )
-for _name, _value in _deferred_custom_object_instances_models_part003:
-    setattr(_custom_object_instances_models_part003, _name, _value)
+for _name, _value in _deferred_custom_object_instances_models_shared3:
+    setattr(_custom_object_instances_models_shared3, _name, _value)
 
 ConversationTeammates.model_rebuild()
 CursorPages.model_rebuild()
@@ -264,15 +264,15 @@ OperatorWorkflowEventEvent.model_rebuild()
 OperatorWorkflowEvent.model_rebuild()
 CallSummary.model_rebuild()
 
-_custom_object_instances_models_part004 = importlib.import_module(
-    ".custom_object_instances_models_part004", __package__
+_custom_object_instances_models_shared4 = importlib.import_module(
+    ".custom_object_instances_models_shared4", __package__
 )
 
-_deferred_custom_object_instances_models_part004: tuple[tuple[str, object], ...] = (
+_deferred_custom_object_instances_models_shared4: tuple[tuple[str, object], ...] = (
     ("Translation", Translation),
 )
-for _name, _value in _deferred_custom_object_instances_models_part004:
-    setattr(_custom_object_instances_models_part004, _name, _value)
+for _name, _value in _deferred_custom_object_instances_models_shared4:
+    setattr(_custom_object_instances_models_shared4, _name, _value)
 
 Error2ErrorsItem.model_rebuild()
 Error2.model_rebuild()

@@ -23,8 +23,8 @@ from ..methods.tickets import (
     reply_ticket_sync,
     search_tickets,
     search_tickets_sync,
-    unlink_tickets_conversation,
-    unlink_tickets_conversation_sync,
+    unlink_ticket_conversation,
+    unlink_ticket_conversation_sync,
     update_ticket,
     update_ticket_sync,
 )
@@ -36,8 +36,8 @@ class _TicketsNamespace:
         self.reply.__doc__ = reply_ticket_sync.__doc__
         self.link_conversation = partial(link_tickets_conversation_sync, config)
         self.link_conversation.__doc__ = link_tickets_conversation_sync.__doc__
-        self.unlink_conversation = partial(unlink_tickets_conversation_sync, config)
-        self.unlink_conversation.__doc__ = unlink_tickets_conversation_sync.__doc__
+        self.unlink_conversation = partial(unlink_ticket_conversation_sync, config)
+        self.unlink_conversation.__doc__ = unlink_ticket_conversation_sync.__doc__
         self.create = partial(create_ticket_sync, config)
         self.create.__doc__ = create_ticket_sync.__doc__
         self.enqueue_create = partial(enqueue_create_ticket_sync, config)
@@ -60,8 +60,8 @@ class _AsyncTicketsNamespace:
         self.reply.__doc__ = reply_ticket.__doc__
         self.link_conversation = partial(link_tickets_conversation, config)
         self.link_conversation.__doc__ = link_tickets_conversation.__doc__
-        self.unlink_conversation = partial(unlink_tickets_conversation, config)
-        self.unlink_conversation.__doc__ = unlink_tickets_conversation.__doc__
+        self.unlink_conversation = partial(unlink_ticket_conversation, config)
+        self.unlink_conversation.__doc__ = unlink_ticket_conversation.__doc__
         self.create = partial(create_ticket, config)
         self.create.__doc__ = create_ticket.__doc__
         self.enqueue_create = partial(enqueue_create_ticket, config)

@@ -3,7 +3,22 @@
 
 import importlib
 
-from .models_part001 import (
+from .models_create_conversation_attribute import (
+    ConversationAttributeList,
+    CreateConversationAttributeBooleanRequest,
+    CreateConversationAttributeBooleanRequestVariant1,
+    CreateConversationAttributeDatetimeRequest,
+    CreateConversationAttributeDatetimeRequestVariant1,
+    CreateConversationAttributeFilesRequest,
+    CreateConversationAttributeFilesRequestVariant1,
+    CreateConversationAttributeRelationshipRequest,
+    CreateConversationAttributeRelationshipRequestVariant1,
+    CreateConversationAttributeRelationshipRequestVariant1Reference,
+    CreateConversationAttributeRequest,
+    UpdateConversationAttributeRequest,
+    UpdateConversationAttributeRequestReference,
+)
+from .models_shared import (
     ConversationAttributeBase,
     ConversationAttributeIntegerType,
     ConversationAttributeIntegerTypeVariant1,
@@ -12,7 +27,7 @@ from .models_part001 import (
     ConversationAttributeStringType,
     ConversationAttributeStringTypeVariant1,
 )
-from .models_part002 import (
+from .models_shared2 import (
     ConversationAttributeBooleanType,
     ConversationAttributeBooleanTypeVariant1,
     ConversationAttributeDatetimeType,
@@ -23,7 +38,7 @@ from .models_part002 import (
     ConversationAttributeRelationshipTypeVariant1,
     ConversationAttributeRelationshipTypeVariant1Reference,
 )
-from .models_part003 import (
+from .models_shared3 import (
     ConversationAttribute,
     ConversationAttributeFilesType,
     ConversationAttributeFilesTypeVariant1,
@@ -39,21 +54,6 @@ from .models_part003 import (
     CreateConversationAttributeStringRequest,
     CreateConversationAttributeStringRequestVariant1,
     UpdateConversationAttributeOptionRequest,
-)
-from .models_part004 import (
-    ConversationAttributeList,
-    CreateConversationAttributeBooleanRequest,
-    CreateConversationAttributeBooleanRequestVariant1,
-    CreateConversationAttributeDatetimeRequest,
-    CreateConversationAttributeDatetimeRequestVariant1,
-    CreateConversationAttributeFilesRequest,
-    CreateConversationAttributeFilesRequestVariant1,
-    CreateConversationAttributeRelationshipRequest,
-    CreateConversationAttributeRelationshipRequestVariant1,
-    CreateConversationAttributeRelationshipRequestVariant1Reference,
-    CreateConversationAttributeRequest,
-    UpdateConversationAttributeRequest,
-    UpdateConversationAttributeRequestReference,
 )
 
 __all__ = [
@@ -105,13 +105,13 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_models_part001 = importlib.import_module(".models_part001", __package__)
+_models_shared = importlib.import_module(".models_shared", __package__)
 
-_deferred_models_part001: tuple[tuple[str, object], ...] = (
+_deferred_models_shared: tuple[tuple[str, object], ...] = (
     ("ConversationAttributeOption", ConversationAttributeOption),
 )
-for _name, _value in _deferred_models_part001:
-    setattr(_models_part001, _name, _value)
+for _name, _value in _deferred_models_shared:
+    setattr(_models_shared, _name, _value)
 
 ConversationAttributeBase.model_rebuild()
 ConversationAttributeStringTypeVariant1.model_rebuild()

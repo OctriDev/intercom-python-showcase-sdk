@@ -3,21 +3,7 @@
 
 import importlib
 
-from .conversations_part001 import (
-    AdminReplyConversationRequest,
-    AssignConversationRequest,
-    CloseConversationRequest,
-    ContactReplyConversationRequest,
-    ContactReplyEmailRequest,
-    ContactReplyIntercomUserIdRequest,
-    ContactReplyUserIdRequest,
-    ConversationDeleted,
-    ConversationList,
-    ConversationParticipantsResponse,
-    ConversationParticipantsResponseCustomersItem,
-    DeletedConversationList,
-)
-from .conversations_part002 import (
+from .conversations_create_conversation import (
     CreateConversationRequest,
     CreateConversationRequestFrom,
     CustomerRequest,
@@ -32,7 +18,7 @@ from .conversations_part002 import (
     HitlEventList,
     SideConversationSummary,
 )
-from .conversations_part003 import (
+from .conversations_list_side_conversations import (
     AttachContactToConversationRequest,
     AttachContactToConversationRequestCustomer,
     AttachContactToConversationRequestCustomerVariant0,
@@ -50,6 +36,20 @@ from .conversations_part003 import (
     SnoozeConversationRequest,
     TeammateReference,
     UpdateConversationRequest,
+)
+from .conversations_reply_conversation import (
+    AdminReplyConversationRequest,
+    AssignConversationRequest,
+    CloseConversationRequest,
+    ContactReplyConversationRequest,
+    ContactReplyEmailRequest,
+    ContactReplyIntercomUserIdRequest,
+    ContactReplyUserIdRequest,
+    ConversationDeleted,
+    ConversationList,
+    ConversationParticipantsResponse,
+    ConversationParticipantsResponseCustomersItem,
+    DeletedConversationList,
 )
 
 __all__ = [
@@ -99,13 +99,15 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_conversations_part001 = importlib.import_module(".conversations_part001", __package__)
+_conversations_reply_conversation = importlib.import_module(
+    ".conversations_reply_conversation", __package__
+)
 
-_deferred_conversations_part001: tuple[tuple[str, object], ...] = (
+_deferred_conversations_reply_conversation: tuple[tuple[str, object], ...] = (
     ("QuickReplyOption", QuickReplyOption),
 )
-for _name, _value in _deferred_conversations_part001:
-    setattr(_conversations_part001, _name, _value)
+for _name, _value in _deferred_conversations_reply_conversation:
+    setattr(_conversations_reply_conversation, _name, _value)
 
 AdminReplyConversationRequest.model_rebuild()
 AssignConversationRequest.model_rebuild()
@@ -119,13 +121,15 @@ ConversationDeleted.model_rebuild()
 DeletedConversationList.model_rebuild()
 ConversationList.model_rebuild()
 
-_conversations_part002 = importlib.import_module(".conversations_part002", __package__)
+_conversations_create_conversation = importlib.import_module(
+    ".conversations_create_conversation", __package__
+)
 
-_deferred_conversations_part002: tuple[tuple[str, object], ...] = (
+_deferred_conversations_create_conversation: tuple[tuple[str, object], ...] = (
     ("TeammateReference", TeammateReference),
 )
-for _name, _value in _deferred_conversations_part002:
-    setattr(_conversations_part002, _name, _value)
+for _name, _value in _deferred_conversations_create_conversation:
+    setattr(_conversations_create_conversation, _name, _value)
 
 CreateConversationRequestFrom.model_rebuild()
 CreateConversationRequest.model_rebuild()

@@ -3,8 +3,7 @@
 
 import importlib
 
-from .models_part001 import Article, ArticleContent, ArticleList, InternalArticle
-from .models_part002 import (
+from .models_list_articles import (
     ArticleListItem,
     ArticleSearchHighlights,
     ArticleSearchHighlightsHighlightedSummaryItemItem,
@@ -16,7 +15,8 @@ from .models_part002 import (
     InternalArticleSearchResponse,
     InternalArticleSearchResponseData,
 )
-from .models_part003 import (
+from .models_shared import Article, ArticleContent, ArticleList, InternalArticle
+from .models_shared2 import (
     ArticleContentRequest,
     ArticleTranslatedContent,
     ArticleVersion,
@@ -25,7 +25,7 @@ from .models_part003 import (
     DeletedArticleObject,
     PublishArticleDraftRequest,
 )
-from .models_part004 import (
+from .models_shared3 import (
     ArticleTranslatedContentRequest,
     CreateArticleRequestRequest,
     UpdateArticleRequestRequest,
@@ -60,28 +60,28 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_models_part001 = importlib.import_module(".models_part001", __package__)
+_models_shared = importlib.import_module(".models_shared", __package__)
 
-_deferred_models_part001: tuple[tuple[str, object], ...] = (
+_deferred_models_shared: tuple[tuple[str, object], ...] = (
     ("ArticleListItem", ArticleListItem),
     ("ArticleStatistics", ArticleStatistics),
     ("ArticleTranslatedContent", ArticleTranslatedContent),
 )
-for _name, _value in _deferred_models_part001:
-    setattr(_models_part001, _name, _value)
+for _name, _value in _deferred_models_shared:
+    setattr(_models_shared, _name, _value)
 
 Article.model_rebuild()
 InternalArticle.model_rebuild()
 ArticleContent.model_rebuild()
 ArticleList.model_rebuild()
 
-_models_part002 = importlib.import_module(".models_part002", __package__)
+_models_list_articles = importlib.import_module(".models_list_articles", __package__)
 
-_deferred_models_part002: tuple[tuple[str, object], ...] = (
+_deferred_models_list_articles: tuple[tuple[str, object], ...] = (
     ("ArticleTranslatedContent", ArticleTranslatedContent),
 )
-for _name, _value in _deferred_models_part002:
-    setattr(_models_part002, _name, _value)
+for _name, _value in _deferred_models_list_articles:
+    setattr(_models_list_articles, _name, _value)
 
 ArticleListItem.model_rebuild()
 InternalArticleListItem.model_rebuild()
