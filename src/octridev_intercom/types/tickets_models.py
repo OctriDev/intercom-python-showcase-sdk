@@ -3,7 +3,7 @@
 
 import importlib
 
-from .tickets_models_part001 import (
+from .tickets_models_shared import (
     TicketContacts,
     TicketCustomAttributes,
     TicketPart,
@@ -20,7 +20,7 @@ from .tickets_models_part001 import (
     TicketType,
     TicketTypeTicketStates,
 )
-from .tickets_models_part002 import Ticket, TicketTypeAttribute, TicketTypeAttributeList
+from .tickets_models_shared2 import Ticket, TicketTypeAttribute, TicketTypeAttributeList
 
 __all__ = [
     "Ticket",
@@ -45,13 +45,13 @@ __all__ = [
 
 # Forward references deferred to TYPE_CHECKING in the parts above are
 # resolvable now that every part is loaded.
-_tickets_models_part001 = importlib.import_module(".tickets_models_part001", __package__)
+_tickets_models_shared = importlib.import_module(".tickets_models_shared", __package__)
 
-_deferred_tickets_models_part001: tuple[tuple[str, object], ...] = (
+_deferred_tickets_models_shared: tuple[tuple[str, object], ...] = (
     ("TicketTypeAttributeList", TicketTypeAttributeList),
 )
-for _name, _value in _deferred_tickets_models_part001:
-    setattr(_tickets_models_part001, _name, _value)
+for _name, _value in _deferred_tickets_models_shared:
+    setattr(_tickets_models_shared, _name, _value)
 
 TicketContacts.model_rebuild()
 TicketPartTranslations.model_rebuild()
